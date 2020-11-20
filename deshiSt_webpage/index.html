@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="img/deshi st logo.svg">
+        <title>Deshi ST limited</title>
+    </head>
+    <body>
+        <script>
+            function setCookie(cname, cvalue, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                var expires = "expires="+ d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+            function getCookie(cname) {
+                var name = cname + "=";
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var ca = decodedCookie.split(';')[0];
+                var lang = ca.split("=")[1];
+                return lang
+            }
+            function checkCookie() {
+                var lang = getCookie("lang");
+                if (lang == "bn") {
+                    window.location.replace("bn/homepage.html");
+                } else if (lang == "en") {
+                    window.location.replace("en/homepage.html");
+                } else {
+                    setCookie("lang", "en", 365);
+                    window.location.replace("en/homepage.html");
+                    }
+                }
+            checkCookie()
+        </script>
+    </body>
+</html>

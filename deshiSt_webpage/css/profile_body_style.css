@@ -1,0 +1,219 @@
+.header{
+    background-color:rgb(11, 30, 66);
+}
+.company_name{
+    color: white;
+}
+.nav_item>a{
+    color:white;
+}
+body{
+    background-color:#f2f4f7;   
+}
+.body{
+    display:grid;
+    grid-template-areas:
+    "speech"
+    "speech2"
+    "key_profile"
+    "ordinary";
+    row-gap: 20px;
+}
+
+.speech{
+    grid-area: speech;
+    background-color: #285474;
+    font-weight: bolder;
+
+}
+.speech_text{
+    display: flex;
+    padding:50px;
+
+
+    font-size: 30pt;
+    color: wheat;
+    font-family: sans-serif;
+    max-width: 600px;
+    margin:auto;
+}
+.speech2{
+    grid-area: speech2;
+}
+.speech_text2{
+    max-width: 900px;
+    margin: auto;
+    color:#3c3c5a;
+    font-family: 'PT Serif', "sans";
+    font-size: 14pt;
+    border-bottom: 2px solid #bbb;
+    padding:3vw;
+}
+.key_profile{
+    grid-area:key_profile;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    row-gap: 20px;
+    padding: 20px;
+    column-gap: 20px;
+    font-size: 10pt;
+    margin:auto;
+    max-width: 900px;
+    
+
+}
+
+.key_prof{
+    display:grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto 1fr;
+    grid-template-areas: 
+    "prof_img ."
+    "prof_img prof_name"
+    "prof_img desig"
+    "about_me about_me";
+    column-gap: 10px;
+    background-color:#f4f6f8;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    font-family: sans-serif;
+    border-radius: 10px;
+}
+.prof_img{
+    grid-area:prof_img;
+    width:150px;
+    border-radius: 10px 0 0 0;
+}
+
+.prof_name{
+    grid-area:prof_name;
+    font-size: 12pt;
+    font-family: 'PT Serif';
+    color:rgb(32, 41, 51);
+}
+
+.desig{
+    grid-area:desig;
+    color: rgb(60, 74, 112);
+    font-size: 8pt;
+}
+
+.about_me{
+    grid-area:about_me;
+    line-height: 20pt;
+    border-top: 1px solid rgb(231, 235, 228);
+    padding: 10px;
+    color:#334141;
+    background-color: rgb(235, 235, 235);
+    font-family: 'PT Serif';
+    font-size: 12pt;
+}
+.ord_cont{
+    grid-area:ordinary;
+    display: flex;
+    background-color: rgb(0, 98, 128);
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.ordinary{
+    display:grid;
+	grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: auto ;
+    max-width: 900px;
+}
+.tooltip{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.tooltip>img{
+    width:80px;
+    border-radius: 50%;
+    transition: 0.3s;
+
+}
+.ord_prof{
+    display: inline-block;
+    position: relative;
+    padding: 5px;
+}
+.tooltiptext{
+    visibility: hidden;
+    display: inline-block;
+    background-color: #fdfdfd;
+    color:#1b2424;
+    width: 150px;
+    z-index: 1;
+    position: absolute;
+    top:105%;
+    left:-35px;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 0.5s;
+    opacity: 0;
+    font-family: "PT Serif", "serif";
+}
+.tooltiptext:after{
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color:transparent transparent rgb(241, 255, 207) transparent;
+}
+.tooltip:hover .tooltiptext{
+    visibility:visible;
+    opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+
+.tooltip:hover img{
+    border-radius: 0px;
+}
+.tinfo{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr auto;
+}
+
+.tname{
+    font-size: 9pt;
+}
+.tdesig{
+    font-size: 7pt;
+}
+.tdate{
+    font-size: 7pt;
+    border-bottom: 1px groove rgb(196, 196, 196);
+}
+.ttalk{
+    font-size: 8pt;
+}
+@media only screen and (max-width: 1160px) {
+    .key_profile{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto;
+    }
+    .ordinary{
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: auto;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    .key_profile{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .speech_text{
+        font-size: 20pt;
+    }
+    .ordinary{
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: auto;
+    }
+}

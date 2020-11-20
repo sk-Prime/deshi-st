@@ -1,0 +1,222 @@
+:root {
+    --split1-split2-height:200px;
+    --split2-bg-color:orange;
+    --split1-bg-color: crimson;
+
+    --headline-font-size: 2em;
+    --headline-color: rgb(255, 255, 255);
+
+    --contentline-font-size:1em;
+    --contentline-color:rgb(255, 255, 255);
+
+    --highligh-headline-color:#3c3c5a;
+    --highlight-bg-color:#cacaca;
+
+    --higlight-border: 0px solid #10002e;
+    --border-style: outset;
+    --border-radius: 10px;
+
+    --h1-bg-color: #f4f4f4;
+    --h2-bg-color: #f4f4f4;
+    --h3-bg-color: #f4f4f4;
+    --h4-bg-color: #f4f4f4;
+}
+.main_body{
+    font-family: "PT Serif";
+}
+.body {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+    "cover_image cover_image"
+    "split1 split2"
+    "HL_body HL_body"
+    "content content";
+
+}
+
+.cover_image {
+    grid-area:cover_image;
+    width:100%;
+}
+
+/*split1 section - begin*/
+.split1 {
+    grid-area:split1 ;
+    background-color: var(--split1-bg-color);
+    padding:100px;
+    height:var(--split1-split2-height);
+}
+
+/*split1 section - end*/
+
+
+.headline {
+    font-size:var(--headline-font-size);
+    font-weight: bolder;
+    color:var(--headline-color);
+}
+
+.contentline {
+    font-size: var(--contentline-font-size);
+    color: var(--contentline-color);
+}
+
+/*split2 section - begin*/
+.split2 {
+    grid-area:split2 ;
+    background-color: var(--split2-bg-color);
+    padding:100px;
+    height:var(--split1-split2-height);
+
+}
+
+
+/*split2 section - end*/
+
+.highlight {
+    grid-area:HL_body;
+    display: grid;
+    padding-left:30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-bottom:30px;
+
+    justify-items: center;
+
+    background-color: var(--highlight-bg-color);
+
+    grid-template-columns: repeat(4 1fr);
+    grid-template-rows: 1fr;
+
+    grid-template-areas:
+    "headln headln headln headln"
+    "h1 h2 h3 h4";
+    row-gap: 1.5em;
+    column-gap: 3.3%;
+}
+
+
+.HL_headline {
+    grid-area: headln;
+    font-size: var(--headline-font-size);
+    font-weight: bolder;
+    padding-bottom: 30px;
+    color:var(--highligh-headline-color);
+}
+
+.HL {
+    color:var(--higlight-text-color);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.637);     
+    transition: transform .2s;
+
+    border: var(--higlight-border);
+    border-radius: var(--border-radius);
+    border-style: var(--border-style);
+    text-decoration: none;
+}
+
+.HL:hover {   
+    transform: scale(1.05);
+
+}
+.HL>img {
+    width:250px;
+    height:250px;
+
+    object-fit: cover;
+    
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.HL_text {
+    text-align: justify;
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    color:#3c3c5a;
+}
+
+.h1 {
+    grid-area:h1;
+    background-color: var(--h1-bg-color);
+}
+
+.h2 {
+    grid-area:h2;
+    background-color: var(--h2-bg-color);
+}
+
+.h3 {
+    grid-area:h3;
+    background-color: var(--h3-bg-color);
+}
+
+.h4 {
+    grid-area:h4;
+    background-color: var(--h4-bg-color);
+}
+
+
+.content {
+    grid-area:content ;
+}
+
+@media only screen and (max-width: 1160px) {
+    .highlight{
+        grid-template-columns: repeat(3 1fr);
+        grid-template-rows: auto 1fr 1fr;
+
+        grid-template-areas:
+        "headln headln headln"
+        "h1 h2 h3"
+        ". h4 .";
+    }
+    
+}
+
+@media only screen and (max-width: 870px) {
+    .highlight{
+        grid-template-columns: repeat(2 1fr);
+        grid-template-rows: auto 1fr 1fr;
+
+        grid-template-areas:
+        "headln headln"
+        "h1 h2"
+        "h3 h4";
+    }
+    .body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: 
+        "cover_image"
+        "split1"
+        "split2"
+        "HL_body"
+        "content";
+    }
+    .split1{
+        padding: 30px;
+    }
+    .split2{
+        padding: 30px;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    .highlight{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto repeat(4 1fr);
+        grid-template-areas:
+        "headln"
+        "h1"
+        "h2"
+        "h3"
+        "h4";
+    }
+}

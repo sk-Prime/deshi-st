@@ -1,0 +1,67 @@
+.body{
+    font-family: 'Abhaya Libre';
+    background-color: #f2f4f7;
+}
+a{
+    text-decoration: none;
+}
+.products_cont{
+    max-width: 900px;
+    margin: auto;
+    padding: 10px;
+}
+.pheadline{
+    font-size: 20pt;
+    font-weight: bold;
+    color:#4d4647;
+    padding:10px;
+    border-bottom: 1px solid #bbb;
+}
+.products{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    margin: auto;
+    justify-items: center;
+    max-width: 880px;
+    row-gap: 20px;
+}
+.product{
+    background-color: #ebebe9;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: 0.3s;
+}
+.pimg{
+    width: 200px;
+    border-radius: 5px 5px 0 0;
+    background-color: white;
+}
+.product:hover {
+    scale: 110%;
+    box-shadow: rgba(255, 153, 0, 0.2) 0px 2px 8px 0px;
+}
+.pname{
+    color: #262629;
+    padding-left: 5px;
+    max-width: 190px;
+}
+@media only screen and (max-width: 900px) {
+    .products{
+        grid-template-columns: repeat(,1fr);
+    }
+}
+@media only screen and (max-width: 660px) {
+    .products{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .pimg{
+        width: 150px;
+    }
+    .pname{
+        font-size: 10pt;
+        max-width: 140px;
+    }
+}

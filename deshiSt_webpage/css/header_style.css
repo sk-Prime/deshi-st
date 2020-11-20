@@ -1,0 +1,232 @@
+@font-face {
+    src: url(font/DejaVuSerif-Bold.ttf);
+    font-family: dejavubold;
+}
+
+@font-face {
+    src: url(font/DejaVuSerif.ttf);
+    font-family: dejavu;
+}
+
+:root{
+    --border-bottom-style: 1px solid black;
+    --header-bg-color:#cad0f1;
+    --menu-border:1px solid black;
+    --menu-item-color: rgb(0, 0, 0);
+    --menu-hover-color:rgb(255, 255, 255);
+    --menu-hover-bg:rgb(0, 0, 0);
+
+    --main-logo-width: 150px;
+    --company-name-size:5em;
+    --company-name-color:rgb(38, 44, 66);
+
+    --slogan-text-size:2em;
+    --slogan-text-color:rgb(45, 36, 51);
+
+    --info-board-height: 320px;
+
+    --button-color: black;
+    --button-bg: gold; 
+    --button-bg-hover: #008145;
+}
+
+
+.header {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "lang nav"
+    "info info"
+    "banner banner" 
+    ;
+    background-color: var(--header-bg-color);
+}
+/*navigation header - begin*/
+
+.nav{
+    grid-area: nav;
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "nav_items";
+}
+
+.lang_select{
+	grid-area: lang;
+	font-size:px;
+}
+.nav_logo{
+	grid-area: nav_logo;
+}
+.item_container {
+    grid-area: nav_items;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    
+    row-gap:1vw;
+    column-gap:1vw;
+    padding-top: 10px ;
+    padding-bottom: 10px;
+    justify-items: center;
+}
+
+.nav_item {
+    padding-bottom: 1vw;
+}
+
+.nav_item>a {
+    padding: 1vw;
+    padding-bottom: 10px;
+    border-bottom:var(--menu-border);
+    transition: 0.3s;
+    text-decoration: none;
+}
+.nav_item>a:link, a:visited, a:active { 
+    text-decoration: none;
+    color: var(--menu-item-color);
+}
+.nav_item a:hover {
+    text-decoration: none;
+    color: var(--menu-hover-color);
+    background-color:var(--menu-hover-bg);
+}
+/*navigation header - end*/
+
+
+/*info header - begin*/
+.info {
+    grid-area:info;
+    display: grid;
+    grid-template-columns: auto 5fr 2fr;
+    grid-template-rows: auto auto auto auto;
+
+    grid-template-areas: 
+    "main_logo      main_logo       info_board"
+    "company_name   company_name    info_board"
+    "slogan         slogan          info_board"
+    ".              sub_text        info_board";
+    justify-items: left;
+
+    padding-top:0em;
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-bottom:2em;
+}
+
+
+.main_logo{
+    grid-area: main_logo;
+    width:var(--main-logo-width);
+    padding-right:50px;
+    padding-left:50px;
+    padding-top:20px;
+}
+
+.company_name{
+    grid-area: company_name;
+    font-size: var(--company-name-size);
+    color:var(--company-name-color);
+    font-family: dejavubold;
+    white-space: nowrap;
+}
+
+.slogan {
+    grid-area: slogan;
+    font-size:var(--slogan-text-size);
+    color:var(--slogan-text-color);
+    font:bold;
+    font-family: dejavu;
+}
+
+.sub_text {
+    grid-area: sub_text;
+
+}
+
+.info_board {
+    grid-area: info_board;
+    display:grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    "image"
+    "button";
+    justify-items: center;
+}
+.info_board_image {
+    grid-area: image;
+    height: var(--info-board-height);
+    float:right;
+}
+.info_board_button {
+    grid-area:button;
+    text-decoration: None;
+    padding:10px;
+    color:var(--button-color);
+    background-color: var(--button-bg);
+    float: right;
+    transition: 0.3s;
+}
+
+.info_board_button:hover {
+    background-color: var(--button-bg-hover);
+}
+/*info header - end*/
+
+@media only screen and (max-width: 900px) {
+    .header {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "lang"
+        "info"
+        "nav"
+        "banner" 
+        ;
+    }
+    .info {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto;
+    
+        grid-template-areas: 
+        "main_logo"
+        "company_name"
+        "slogan"
+        "sub_text"
+        "info_board";
+
+        justify-items: center;
+        padding:1em;
+    }
+    .company_name{
+        font-size:4em;
+    }
+    .slogan {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    .info_board {
+        padding-top: 20px;
+    }
+
+    .nav {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "nav_items";
+
+    }
+
+    .info_board_image{
+        height: 200px;
+    }
+    @media only screen and (max-width: 660px) {
+        .info_board_button {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    
+}
