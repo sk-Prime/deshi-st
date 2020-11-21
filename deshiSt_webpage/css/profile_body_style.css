@@ -1,3 +1,7 @@
+@font-face {
+    src: url(font/NotoSerifBengali-Regular.ttf);
+    font-family: NotoSerifBN;
+}
 .header{
     background-color:rgb(11, 30, 66);
 }
@@ -18,6 +22,7 @@ body{
     "key_profile"
     "ordinary";
     row-gap: 20px;
+    font-family: 'PT Serif', 'NotoSerifBN', serif;
 }
 
 .speech{
@@ -41,10 +46,9 @@ body{
     grid-area: speech2;
 }
 .speech_text2{
-    max-width: 900px;
+    max-width: 1100px;
     margin: auto;
     color:#3c3c5a;
-    font-family: 'PT Serif', "sans";
     font-size: 14pt;
     border-bottom: 2px solid #bbb;
     padding:3vw;
@@ -52,14 +56,14 @@ body{
 .key_profile{
     grid-area:key_profile;
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     row-gap: 20px;
     padding: 20px;
     column-gap: 20px;
     font-size: 10pt;
     margin:auto;
-    max-width: 900px;
+    max-width: 1100px;
     
 
 }
@@ -76,7 +80,7 @@ body{
     column-gap: 10px;
     background-color:#f4f6f8;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    font-family: sans-serif;
+
     border-radius: 10px;
 }
 .prof_img{
@@ -88,7 +92,7 @@ body{
 .prof_name{
     grid-area:prof_name;
     font-size: 12pt;
-    font-family: 'PT Serif';
+
     color:rgb(32, 41, 51);
 }
 
@@ -105,7 +109,7 @@ body{
     padding: 10px;
     color:#334141;
     background-color: rgb(235, 235, 235);
-    font-family: 'PT Serif';
+
     font-size: 12pt;
 }
 .ord_cont{
@@ -152,7 +156,7 @@ body{
     padding: 5px;
     transition: 0.5s;
     opacity: 0;
-    font-family: "PT Serif", "serif";
+
 }
 .tooltiptext:after{
     content: " ";

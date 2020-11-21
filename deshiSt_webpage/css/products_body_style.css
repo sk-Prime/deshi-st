@@ -1,5 +1,9 @@
+@font-face {
+    src: url(font/NotoSerifBengali-Regular.ttf);
+    font-family: NotoSerifBN;
+}
 .body{
-    font-family: 'PT Serif';
+    font-family: 'PT Serif', 'NotoSerifBN', serif;
     background-color: #f2f4f7;
 }
 a{
@@ -49,7 +53,7 @@ a{
 }
 @media only screen and (max-width: 900px) {
     .products{
-        grid-template-columns: repeat(,1fr);
+        grid-template-columns: repeat(3,1fr);
     }
 }
 @media only screen and (max-width: 660px) {

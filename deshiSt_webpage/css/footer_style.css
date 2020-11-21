@@ -1,3 +1,7 @@
+@font-face {
+    src: url(font/NotoSerifBengali-Regular.ttf);
+    font-family: NotoSerifBN;
+}
 :root {
     --footer-bg: indigo;
     --footer-headline-size: 2em;
@@ -16,7 +20,7 @@
 
     background-color: var(--footer-bg);
     padding-bottom: 40px;
-    font-family: "PT Serif";
+    font-family: 'PT Serif', 'NotoSerifBN', serif;
 }
 
 .social {

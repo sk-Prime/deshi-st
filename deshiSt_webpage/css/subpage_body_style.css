@@ -1,3 +1,7 @@
+@font-face {
+    src: url(font/NotoSerifBengali-Regular.ttf);
+    font-family: NotoSerifBN;
+}
 .main_body{
     background-color: #f8f6f0;
 }
@@ -14,10 +18,10 @@
     margin: auto;
     padding-top:10px;
     padding-bottom:10px;
+    font-family: 'PT Serif', 'NotoSerifBN', serif;;
 
 }
 .para_title{
-    font-family: 'PT Serif';
     grid-area: para_title;
     font-size: 30pt;
     font-weight: bolder;
@@ -30,7 +34,7 @@
     max-width: 840px;
     line-height: 150%;
     padding:20px;
-    font-family: 'PT Serif';
+
     font-size: 14pt;
     color:#3c3c5a;
 }

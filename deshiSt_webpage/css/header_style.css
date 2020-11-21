@@ -4,8 +4,8 @@
 }
 
 @font-face {
-    src: url(font/DejaVuSerif.ttf);
-    font-family: dejavu;
+    src: url(font/NotoSerifBengali-Regular.ttf);
+    font-family: NotoSerifBN;
 }
 
 :root{
@@ -41,6 +41,7 @@
     "banner banner" 
     ;
     background-color: var(--header-bg-color);
+    font-family: 'PT Serif', 'NotoSerifBN', serif;
 }
 /*navigation header - begin*/
 
@@ -129,7 +130,7 @@
     grid-area: company_name;
     font-size: var(--company-name-size);
     color:var(--company-name-color);
-    font-family: dejavubold;
+    font-family: dejavubold, serif;
     white-space: nowrap;
 }
 
@@ -138,7 +139,7 @@
     font-size:var(--slogan-text-size);
     color:var(--slogan-text-color);
     font:bold;
-    font-family: dejavu;
+    font-family: 'PT Serif', 'NotoSerifBN';
 }
 
 .sub_text {
@@ -159,7 +160,6 @@
 .info_board_image {
     grid-area: image;
     height: var(--info-board-height);
-    float:right;
 }
 .info_board_button {
     grid-area:button;
@@ -221,11 +221,21 @@
 
     .info_board_image{
         height: 200px;
+        float: none;
     }
     @media only screen and (max-width: 660px) {
         .info_board_button {
             width: 100%;
             text-align: center;
+        }
+        .info_board_image {
+            display: flex;
+            height: var(--info-board-height);
+            margin: auto;
+        }
+        .main_logo{
+            display: flex;
+            margin:auto;
         }
     }
     
